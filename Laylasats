@@ -1,0 +1,96 @@
+import React, { useMemo, useState } from "react";
+              <div className="rounded-2xl bg-violet-50 p-5 ring-1 ring-violet-200">
+                <h4 className="text-lg font-bold text-violet-800">You do one</h4>
+                <div className="mt-4 rounded-xl bg-slate-900 p-4 text-center text-2xl font-black text-white">6.2 × 100 = ?</div>
+                <div className="mt-4 rounded-xl border-2 border-dashed border-violet-300 bg-white p-3 text-sm text-slate-500">Show your workings clearly using place value if it helps.</div>
+              </div>
+            }
+          />
+
+          <div className="rounded-3xl bg-white p-6 shadow-md ring-1 ring-slate-200">
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-rose-700">Phase 1 • Lesson 7</p>
+                <h3 className="text-2xl font-black">Spot the Mistake 🕵️‍♀️</h3>
+              </div>
+              <button
+                onClick={() => toggleLesson(6)}
+                className={`rounded-full px-5 py-2 text-sm font-semibold shadow ${completedLessons.includes(6) ? "bg-emerald-500 text-white" : "bg-violet-500 text-white"}`}
+              >
+                {completedLessons.includes(6) ? "Completed ✅" : "Mark lesson done"}
+              </button>
+            </div>
+            <p className="text-sm text-slate-700">These are wrong on purpose. Ask: what went wrong before asking for the right answer.</p>
+            <div className="mt-4 grid gap-4 lg:grid-cols-3">
+              <MistakeCard title="Mistake 1" tone="rose" working={`  3.4
++2.35
+-----
+ 5.75`} prompt="What is wrong here?" won={stars[0]} onCheck={() => awardStar(0)} />
+              <MistakeCard title="Mistake 2" tone="amber" working={`  52
+- 28
+-----
+  34`} prompt="What step was missed?" won={stars[1]} onCheck={() => awardStar(1)} />
+              <MistakeCard title="Mistake 3" tone="sky" working={`   23
+×   4
+-----
+   812`} prompt="What happened to the carried digit?" won={stars[2]} onCheck={() => awardStar(2)} />
+            </div>
+          </div>
+
+          <div className="rounded-3xl bg-white p-6 shadow-md ring-1 ring-slate-200">
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-sky-700">Phase 1 • Lesson 8</p>
+                <h3 className="text-2xl font-black">Mixed Calculation Practice 💥</h3>
+              </div>
+              <button
+                onClick={() => toggleLesson(7)}
+                className={`rounded-full px-5 py-2 text-sm font-semibold shadow ${completedLessons.includes(7) ? "bg-emerald-500 text-white" : "bg-violet-500 text-white"}`}
+              >
+                {completedLessons.includes(7) ? "Completed ✅" : "Mark lesson done"}
+              </button>
+            </div>
+            <p className="text-sm text-slate-700">This is where Layla practises choosing the right method calmly.</p>
+            <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {[
+                "4687 + 2756",
+                "502 − 178",
+                "46 × 13",
+                "144 ÷ 6",
+              ].map((item) => (
+                <div key={item} className="rounded-2xl bg-slate-50 p-4 text-center text-lg font-black ring-1 ring-slate-200">{item} = ?</div>
+              ))}
+            </div>
+            <div className="mt-4 rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-200">Say in your head first: what kind of question is this, and what method does it need?</div>
+          </div>
+        </section>
+
+        <section className="mt-8 rounded-3xl bg-sky-100 p-6 shadow-sm ring-1 ring-sky-200">
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-sky-700">Phase 1 • Lesson 9</p>
+              <h2 className="text-2xl font-black">Challenge Check ✖️</h2>
+            </div>
+            <button
+              onClick={() => toggleLesson(8)}
+              className={`rounded-full px-5 py-2 text-sm font-semibold shadow ${completedLessons.includes(8) ? "bg-emerald-500 text-white" : "bg-violet-500 text-white"}`}
+            >
+              {completedLessons.includes(8) ? "Completed ✅" : "Mark lesson done"}
+            </button>
+          </div>
+          <p className="mt-2 text-sm text-slate-700">This is not a test. It’s just to see where Layla is today.</p>
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
+            {["6 × 4 = ?", "23 × 4 = ?", "34 × 12 = ?"].map((item) => (
+              <div key={item} className="rounded-2xl bg-white p-4 text-center text-xl font-black shadow ring-1 ring-sky-200">
+                {item}
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-sm font-semibold text-sky-800">Say: “Just show me how you’d do it.”</p>
+        </section>
+
+        <footer className="mt-10 text-center text-sm text-slate-500">Built for Layla 💛 Stronger every lesson.</footer>
+      </div>
+    </div>
+  );
+}
